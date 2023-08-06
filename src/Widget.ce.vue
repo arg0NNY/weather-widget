@@ -1,6 +1,6 @@
 <template>
   <main class="weather-widget">
-   Test
+    
   </main>
 </template>
 
