@@ -12,5 +12,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    rollupOptions: {
+      input: 'src/main.ts',
+      output: {
+        entryFileNames: 'weather-widget.min.js',
+        format: 'es'
+      }
+    }
   }
 })

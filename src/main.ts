@@ -1,6 +1,6 @@
-import './assets/main.css'
+import { defineCustomElement } from 'vue'
+import Widget from './Widget.ce.vue'
 
-import { createApp } from 'vue'
-import App from './App.vue'
+const WidgetElement = defineCustomElement(Widget)
 
-createApp(App).mount('#app')
+customElements.define('weather-widget', WidgetElement)
