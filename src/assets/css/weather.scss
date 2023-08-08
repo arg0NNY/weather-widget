@@ -1,0 +1,79 @@
+@import "includes";
+
+.weather-main {
+  min-height: 184px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__temp {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 120%; /* 86.4px */
+  }
+  &__desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+  }
+}
+
+.weather-spec-list {
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 44px;
+}
+.weather-spec {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  &__icon {
+    flex-shrink: 0;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__info {
+    span + span {
+      margin-top: 4px;
+    }
+  }
+}
+
+.weather {
+  &__spec {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    //border-top: 1px solid transparentize($color-primary, .8);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 90%;
+      background: transparentize($color-primary, .8);
+    }
+  }
+}

@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tabler/icons-vue": "^2.30.0",
+    "@vueuse/core": "^10.3.0",
+    "axios": "^1.4.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
