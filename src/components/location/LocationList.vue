@@ -10,7 +10,7 @@
     handle=".location__grip"
     v-bind="dragOptions"
   >
-    <template #item="{ element: location, index }: { element: LocationT }">
+    <template #item="{ element: location, index }: { element: LocationT, index: number }">
       <Location
         :key="location.name + location.country"
         :location="location"

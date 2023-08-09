@@ -29,7 +29,7 @@ onMounted(async () => {
   if (initialSetupComplete.value) return
 
   try {
-    await new Promise(resolve => {
+    await new Promise<void>(resolve => {
       async function success (position: GeolocationPosition) {
         const location = (await searchLocationsByCoords({ lon: position.coords.longitude, lat: position.coords.latitude }, 1))[0]
         if (location) locations.value = [location]

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { OpenWeather } from '@/api/types'
+import type { OpenWeather } from '@/api/types'
 import { computed } from 'vue'
 import Degree from '@/components/general/Degree.vue'
 import { capitalize } from '@/composables/format'
