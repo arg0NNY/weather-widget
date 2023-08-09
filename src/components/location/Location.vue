@@ -4,7 +4,7 @@
       <IconGripVertical class="location__grip" />
       <h3 class="location__name">{{ location.name }}, {{ location.country }}</h3>
     </div>
-    <div class="location__action">
+    <div v-if="removable" class="location__action">
       <Action @click="emit('remove')"><IconTrash /></Action>
     </div>
   </div>
@@ -15,9 +15,15 @@ import type { Location } from '@/api/types'
 import Action from '@/components/general/Action.vue'
 import { IconTrash, IconGripVertical } from '@tabler/icons-vue'
 
-const props = defineProps<{
-  location: Location
-}>()
+const props = withDefaults(
+  defineProps<{
+    location: Location,
+    removable?: boolean
+  }>(),
+  {
+    removable: true
+  }
+)
 const emit = defineEmits<{
   remove: []
 }>()

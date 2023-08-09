@@ -11,7 +11,12 @@
     v-bind="dragOptions"
   >
     <template #item="{ element: location, index }: { element: LocationT }">
-      <Location :key="location.name + location.country" :location="location" @remove="remove(index)" />
+      <Location
+        :key="location.name + location.country"
+        :location="location"
+        :removable="locations.length > 1"
+        @remove="remove(index)"
+      />
     </template>
   </Draggable>
 </template>

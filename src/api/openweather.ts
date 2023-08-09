@@ -27,3 +27,7 @@ export function getWeather (location: Location | Coords): Promise<OpenWeather> {
 export function searchLocations (q: string, limit: number = 5): Promise<Location[]> {
   return request.get('/geo/1.0/direct', { params: { q, limit } })
 }
+
+export function searchLocationsByCoords (coords: Coords, limit: number = 5): Promise<Location[]> {
+  return request.get('/geo/1.0/reverse', { params: { ...coords, limit } })
+}
