@@ -47,6 +47,7 @@ const { focused } = useFocus(input)
 
 watch(query, () => pending.value = true)
 watchDebounced(query, async q => {
+  if (!q) return
   options.value = await props.options(q)
   pending.value = false
 }, { debounce: props.debounce })
