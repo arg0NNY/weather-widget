@@ -1,0 +1,41 @@
+@import "includes";
+
+.settings {
+  &__header {
+    margin-bottom: 24px;
+  }
+  &__locations {
+    margin-top: 24px;
+  }
+}
+
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.location {
+  background: $color-primary;
+  border-radius: 16px;
+  color: $color-dark;
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 16px 8px;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+  }
+  &__name {
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+  }
+  &__grip {
+    color: darken($color-primary, 20);
+    &, > * {
+      cursor: move;
+    }
+  }
+}

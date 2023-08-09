@@ -5,7 +5,7 @@
     :location="location"
   >
     <template v-if="i === 0" #action>
-      <Action><IconSettings /></Action>
+      <Action @click="page = Pages.Settings"><IconSettings /></Action>
     </template>
   </WeatherLocation>
 </template>
@@ -16,6 +16,7 @@ import WeatherLocation from '@/components/weather/WeatherLocation.vue'
 import type { Location } from '@/api/types'
 import Action from '@/components/general/Action.vue'
 import { IconSettings } from '@tabler/icons-vue'
+import { page, Pages } from '@/composables/page'
 
 const { locations } = useSettings()
 </script>

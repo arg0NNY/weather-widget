@@ -98,4 +98,9 @@
 
 .degree {
   vertical-align: .65em;
+  margin: 0 .05em;
+}
+
+.flip-list-move {
+  transition: transform 0.5s;
 }

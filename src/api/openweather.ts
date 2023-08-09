@@ -24,6 +24,6 @@ export function getWeather (location: Location | Coords): Promise<OpenWeather> {
   return request.get('/data/2.5/weather', { params: { lon: location.lon, lat: location.lat, units: 'metric' } })
 }
 
-export function searchLocations (q: string) {
-
+export function searchLocations (q: string, limit: number = 5): Promise<Location[]> {
+  return request.get('/geo/1.0/direct', { params: { q, limit } })
 }
